@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar and Spelling Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+            <div class="app-header">
+        <div class="app-logo">Aa</div>
+
+        <h1>Grammar & Spelling Checker</h1>
+
+        <p>
+            Write better. Communicate smarter.
+            Check your grammar and spelling instantly.
+        </p>
+    </div>
+
+        <textarea id="textInput" placeholder="Enter your text here...">
+
+        </textarea>
+
+    <div class="highlight-preview" id="highlightPreview">
+        <h3>Highlighted Text</h3>
+        <p>Your highlighted text will appear here.</p>
+    </div>
+
+    <div class="text-stats">
+        <p>Words: <span id="wordCount">0</span></p>
+        <p>Characters: <span id="charCount">0</span></p>
+        <p>Sentences: <span id="sentenceCount">0</span></p>
+    </div>
+
+        <button id="checkBtn">Check Grammar</button>
+        <button id="clearBtn">Clear Text</button>
+
+        <div id="result">
+            <h3>Correction Results</h3>
+            <p>Your results will appear here.</p>
+        </div>
+
+        <footer class="app-footer">
+            <p>Grammar & Spelling Checker</p>
+
+            <p>Built with Python, Flask & LanguageTool</p>
+
+            <p>Academic Project | MCA AI & Data Science</p>
+
+            <span>© 2026 All Rights Reserved</span>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

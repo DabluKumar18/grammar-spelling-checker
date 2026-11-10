@@ -1,0 +1,405 @@
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f5ff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    color: #1e293b;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 35px rgba(37, 99, 235, 0.08);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+h1 {
+    text-align: center;
+    color: #172554;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.container > p {
+    text-align: center;
+    color: #64748b;
+    font-size: 15px;
+    margin-bottom: 28px;
+}
+
+/* =========================
+   TEXT EDITOR
+========================= */
+
+textarea {
+    display: block;
+    width: 100%;
+    min-height: 220px;
+    padding: 18px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #1e293b;
+    background: #ffffff;
+    resize: vertical;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.10);
+}
+
+/* =========================
+   TEXT STATISTICS
+========================= */
+
+.text-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 14px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.text-stats p {
+    margin: 0;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 14px;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+/* =========================
+   HIGHLIGHT PREVIEW
+========================= */
+
+.highlight-preview {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f8faff;
+    border: 1px solid #dbe5f5;
+    border-radius: 12px;
+    min-height: 100px;
+}
+
+.highlight-preview h3 {
+    color: #1e3a8a;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.highlight-preview p {
+    color: #334155;
+    font-size: 15px;
+    line-height: 2;
+    white-space: pre-wrap;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+/* =========================
+   ERROR HIGHLIGHTING
+========================= */
+
+.spelling-error {
+    background: #fee2e2;
+    color: #b91c1c;
+    border-bottom: 2px solid #ef4444;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.grammar-error {
+    background: #fef3c7;
+    color: #92400e;
+    border-bottom: 2px solid #f59e0b;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.other-error {
+    background: #dbeafe;
+    color: #1e40af;
+    border-bottom: 2px solid #3b82f6;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* =========================
+   CORRECTION RESULTS
+========================= */
+
+#result {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f8faff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow-wrap: anywhere;
+}
+
+#result h3 {
+    color: #1e3a8a;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+#result p {
+    color: #334155;
+    line-height: 1.6;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px 10px;
+        align-items: flex-start;
+    }
+
+    .container {
+        padding: 20px 15px;
+        border-radius: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .container > p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    textarea {
+        min-height: 180px;
+        font-size: 15px;
+        padding: 14px;
+    }
+
+    .text-stats {
+        gap: 12px;
+        font-size: 13px;
+    }
+
+    button {
+        padding: 13px;
+        font-size: 14px;
+    }
+
+    .highlight-preview,
+    #result {
+        padding: 15px;
+    }
+}
+
+
+
+/* Error Summary Dashboard */
+
+.error-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.summary-card {
+    padding: 16px 12px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+.summary-card h4 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.summary-card .count {
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.total-card {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    color: #1d4ed8;
+}
+
+.spelling-card {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #b91c1c;
+}
+
+.grammar-card {
+    background: #fffbeb;
+    border-color: #fde68a;
+    color: #b45309;
+}
+
+.other-card {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #15803d;
+}
+
+@media (max-width: 600px) {
+    .error-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Suggestion Buttons */
+
+#result button {
+    display: inline-block;
+    width: auto;
+    min-width: 100px;
+    padding: 9px 16px;
+    margin: 8px 8px 4px 0;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#result button:hover {
+    background: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+    transform: translateY(-1px);
+}
+
+#result button:active {
+    transform: scale(0.98);
+}
+
+/* Professional App Header */
+
+.app-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.app-logo {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2563eb;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+}
+
+.app-header h1 {
+    margin-bottom: 10px;
+}
+
+.app-header p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+button:disabled {
+    background: #93b4f5;
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.8;
+}
+
+/* Professional Footer */
+
+.app-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.app-footer p {
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.app-footer p:first-child {
+    color: #1e3a8a;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.app-footer span {
+    display: block;
+    margin-top: 12px;
+    color: #94a3b8;
+    font-size: 12px;
+}
